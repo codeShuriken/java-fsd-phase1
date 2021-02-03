@@ -19,15 +19,15 @@ public class EmailSearcher {
 		return false;
 	}
 	
-	public boolean validateEmail(String email) {
+	public boolean validEmail(String email) {
 		EmailValidater emailValidater = new EmailValidater();
-		return emailValidater.validateEmail(email);
+		return emailValidater.validEmail(email);
 	}
 	
 	public class EmailValidater{
 		final String regex = "\\w+\\.?\\w*\\@\\w+\\.\\w+\\.?\\w*";
 		
-		public boolean validateEmail(String email) {
+		public boolean validEmail(String email) {
 			final Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
 			final Matcher matcher = pattern.matcher(email);
 					
