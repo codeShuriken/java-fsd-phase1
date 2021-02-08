@@ -1,0 +1,3 @@
+Having a main method means the class can be runint, long, double, boolean, char, short, byte, float are PRIMITIVE data types.
+The actual values are stored in the variable(s).
+Reference types are arrays and objects.

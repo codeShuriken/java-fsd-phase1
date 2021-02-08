@@ -3,11 +3,12 @@ package learnjava;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
+import java.io.File;
 import java.util.ArrayList;
 
 public class LearnjavaApplicaton {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		System.out.println("Hello World!");
 		
@@ -41,7 +42,11 @@ public class LearnjavaApplicaton {
 		//Arrays
 		System.out.println("Arrays");
 		ArrayExample arrayExample = new ArrayExample();
-		arrayExample.testArrays();
+		try {
+			arrayExample.testArrays();
+		}catch(IndexOutOfBoundsException e) {
+			System.err.println(e.getMessage());
+		}
 		
 		System.out.println("-------------------------------------");
 		
@@ -89,8 +94,28 @@ public class LearnjavaApplicaton {
 			{
 				System.out.println("Interrupted");
 			}
+			
+			Thread.sleep(1000);
 
-		
+			System.out.println("-----------------");
+			System.out.println("ExecptionExamples:");
+			
+			ExceptionExample exceptionExample = new ExceptionExample();
+			exceptionExample.HandleException();
+			try {
+				System.out.println(exceptionExample.UnknownWord());
+			}catch(UnknownWordException e) {
+				System.err.println(e.getMessage());
+			}
+			
+			
+			System.out.println("-----------------");
+			System.out.println("FileExample:");
+
+			FileExample fileExample = new FileExample();
+			fileExample.DeleteFileIfExists("text.txt");
+			File myFile = fileExample.CreateFile("text.txt");
+			fileExample.WriteFile("Hello world! LOL");
 	}
 
 }

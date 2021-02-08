@@ -40,7 +40,7 @@ public class ArrayExample {
 	}
 	
 	
-	public void testArrays() {
+	public void testArrays() throws IndexOutOfBoundsException{
 		//empty space = 0
 		//black occupied = 1
 		//red occupied = 2
